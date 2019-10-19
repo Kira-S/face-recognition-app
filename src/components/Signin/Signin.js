@@ -1,4 +1,5 @@
 import React from 'react';
+import SERVER_URL from '../../variables'
 
 class Signin extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Signin extends React.Component {
         this.setState({ signInPassword: event.target.value })
     }
     onSubmitSignIn = () => {
-        fetch('http://localhost:3000/signin', {
+        fetch(SERVER_URL + '/signin', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

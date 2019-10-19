@@ -8,6 +8,7 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import './App.css';
+import SERVER_URL from './variables';
 
 const particlesOptions = {
   particles: {
@@ -96,17 +97,17 @@ class App extends Component {
   
   onSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('http://localhost:3000/imageurl', {
+    fetch(SERVER_URL + '/imageurl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        input: this.state.in
+        input: this.state.input
       })
     })
     .then(response => response.json())
     .then(response => {
       if(response) {
-        fetch('http://localhost:3000/image', {
+        fetch(SERVER_URL + '/image', {
           method: 'put',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
