@@ -6,7 +6,7 @@ import './Logo.css';
 const Logo = () => {
     return (
         <div className="Logo">
-            <Tilt className="Tilt" options={{ max: 55 }} style={{ height:200, width: 200 }} >
+            <Tilt className="Tilt" options={{ max: 55 }} style={{ height:170, width: 170 }} >
                 <div className="Tilt-inner">
                     <img src={brain} alt="logo"></img>
                 </div>
